@@ -1,31 +1,45 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
+                            <i class="material-icons">file_upload</i>
                         </div>
-                        <p class="card-category">Fichero de baremado</p>
-                        <button mat-icon-button>Submit</button>
+                        <p class="card-category">Fichero de barremado</p><br/>
+                        <!--input type="file" class="file-upload" multiple onchange="console.log(event.target.files)"-->
+                        <input type="file" class="file-input" multiple onchange="console.log(event.target.files)" #fileUpload>
+
+                        <div class="file-upload">
+
+                            {{fileName || "No file uploaded yet."}}
+
+                            <button mat-mini-fab color="primary" class="upload-btn"
+                            (click)="fileUpload.click()">
+                                <mat-icon>attach_file</mat-icon>
+                            </button>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
                             <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Get More Space...</a>
+                            <a href="javascript:void(0)">Debe llamarse Baremos_CIR_LIR_vs_MAT</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">alarm</i>
+                            <i class="material-icons">date_range</i>
                         </div>
                         <p class="card-category">Fecha de inicio</p>
-                        <input class="form-select" multiple="" name="process1_widget-1_date" required="" type="date"/>
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -35,9 +49,36 @@
                     </div>
                 </div>
             </div>
-        <!--/div>
-        <div class="row"-->
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">list</i>
+                        </div>
+                        <p class="card-category">Seleccionar producto/s</p>
+                    </div>
+                    <div>
+                        <ng-multiselect-dropdown
+                        [placeholder]="'custom placeholder'"
+                        [settings]="dropdownSettings"
+                        [data]="dropdownList"
+                        [(ngModel)]="selectedItems"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                        >
+                        </ng-multiselect-dropdown>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i>
+                            <a href="javascript:void(0)">Seleccionar al menos un producto</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6">
                 <!--div class="col-lg-6 col-md-12"-->
                 <div class="card">
                     <div class="card-header card-header-tabs card-header-primary">
@@ -121,4 +162,6 @@
             </div>
         </div>
     </div>
+    
+    <button mat-raised-button color="primary" class="button-submit">Submit</button>
 </div>
