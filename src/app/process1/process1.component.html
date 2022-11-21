@@ -35,11 +35,15 @@
                         <div class="card-icon">
                             <i class="material-icons">date_range</i>
                         </div>
-                        <p class="card-category">Fecha de inicio</p>
-                            <mat-label>Choose a date</mat-label>
-                            <input matInput [matDatepicker]="picker">
-                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
+                            <p class="card-category">Fecha de inicio
+
+                            </p>
+                    </div>
+                    <div class="prueba col-md-12">
+                        <!--mat-label>Choose a date</mat-label-->
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -57,7 +61,7 @@
                         </div>
                         <p class="card-category">Seleccionar producto/s</p>
                     </div>
-                    <div>
+                    <div class="multi-dropdown col-md-12">
                         <ng-multiselect-dropdown
                         [placeholder]="'custom placeholder'"
                         [settings]="dropdownSettings"

@@ -201,7 +201,7 @@
             color: #a9afbb;
         }
     }
-
+/*COLOR TEXTO BARRA LATERAL*/
     .nav li a,
     .nav li .dropdown-menu a{
           margin: 10px 15px 0;
@@ -225,7 +225,7 @@
         left: 0;
         background-size: cover;
         background-position: center center;
-
+/*COLORES DE LA BARRA LATERAL*/
         &:after{
             position: absolute;
             z-index: 3;
@@ -233,7 +233,7 @@
             height: 100%;
             content: "";
             display: block;
-            background: #FFFFFF;
+            background: #ffffff;
             opacity: .93;
         }
     }
