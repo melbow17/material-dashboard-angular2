@@ -1,1 +1,74 @@
-<p>process2 works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">date_range</i>
+                        </div>
+                            <p class="card-category">Fecha de inicio</p>
+                            <input class="prueba" matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                    </div>
+                    <!--div class="prueba col-md-12">
+                        <input matInput [matDatepicker]="picker">
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </div-->
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i>
+                            <a href="javascript:void(0)">Debe ser posterior a 30/06/2021</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">file_upload</i>
+                    </div>
+                    <p class="card-category">Fichero de barremado</p><br/> 
+                    <!--input type="file" class="file-upload" multiple onchange="console.log(event.target.files)"-->
+                    <input type="file" class="file-input" multiple onchange="console.log(event.target.files)" #fileUpload>
+
+                    <div class="file-upload">
+
+                        {{fileName || "No file uploaded yet."}}
+
+                        <button mat-mini-fab color="primary" class="upload-btn"
+                        (click)="fileUpload.click()">
+                            <mat-icon>attach_file</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="javascript:void(0)">Debe llamarse Baremos_CIR_LIR_vs_MAT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <button class="btn btn-primary mr-1" type="button">Default</button>
+        <div class="col-md-4">
+            <div class="card card-chart">
+                <div class="card-body">
+                    <i class="material-icons">date_range</i>
+                    <h4 class="card-title">Daily Sales</h4>
+                    <p class="card-category">
+                        <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">access_time</i> updated 4 minutes ago
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

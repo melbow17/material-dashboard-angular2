@@ -11,7 +11,7 @@ export class Process1Component implements OnInit {
   dropdownList = [];
   selectedItems = [];
   dropdownSettings:IDropdownSettings;
-  fileName = 'Algo'
+  fileName = 'Seleccionar fichero de baremado'
   constructor() { }
 
   ngOnInit(): void {

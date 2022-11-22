@@ -146,15 +146,17 @@
             &:hover > a,
             & .dropdown-menu a:hover,
             & .dropdown-menu a:focus,
+            // COLOR DE BARRA LATERAL AL PASAR EL RATON
             &.active > [data-toggle="collapse"]{
-                background-color: rgba(200, 200, 200, 0.2);
-                color: $black-color;
+                background-color: rgba(252, 5, 5, 0.637);
+                // COLOR DE TEXTO DE BARRA LATERAL AL PASAR EL RATON
+                color: $white-color;
                 box-shadow: none;
             }
 
             &.active > [data-toggle="collapse"]{
                 i{
-                    color: #a9afbb;
+                    color: #bba9a9;
                 }
             }
 
@@ -172,7 +174,7 @@
                     position: absolute;
                     height: 1px;
                     left: 15px;
-                    background-color: rgba(180,180,180, .3);
+                    background-color: rgba(252, 2, 2, 0.3);
                 }
 
                 & + li {
@@ -206,7 +208,7 @@
     .nav li .dropdown-menu a{
           margin: 10px 15px 0;
           border-radius: $border-radius-base;
-          color: $black-color;
+          color: $white-color;
           padding-left: 10px;
           padding-right: 10px;
           text-transform: capitalize;
@@ -233,7 +235,8 @@
             height: 100%;
             content: "";
             display: block;
-            background: #ffffff;
+            //background: #ffffff;
+            background: #031146e5;
             opacity: .93;
         }
     }
@@ -265,11 +268,12 @@
         }
 
         .simple-text{
+            //COLOR DEL ENCABEZADO (ATENEA) DE LA BARRA LATERAL
             text-transform: uppercase;
             padding: $padding-small-vertical $padding-zero;
             display: inline-block;
             font-size: 18px;
-            color: $black-color;
+            color: $white-color;
             white-space: nowrap;
             font-weight: $font-weight-default;
             line-height: 30px;
@@ -334,7 +338,7 @@
         .logo,
         .nav li.separator{
             &:after{
-                background-color: rgba(255,255,255, .3);
+                background-color: rgba(255, 255, 255, 0.3);
             }
         }
 
